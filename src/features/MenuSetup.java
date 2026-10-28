@@ -1,6 +1,6 @@
 package features;
 
-import entities.Menu.Menu;
+import entities.menu.Menu;
 import java.util.Scanner;
 
 public class MenuSetup {

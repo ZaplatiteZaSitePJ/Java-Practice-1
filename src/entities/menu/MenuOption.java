@@ -1,4 +1,4 @@
-package entities.Menu;
+package entities.menu;
 
 public class MenuOption {
     private int number;

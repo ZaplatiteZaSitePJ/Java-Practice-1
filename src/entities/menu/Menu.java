@@ -1,4 +1,4 @@
-package entities.Menu;
+package entities.menu;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;

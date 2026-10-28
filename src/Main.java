@@ -1,6 +1,6 @@
 
-import entities.Menu.Menu;
-import entities.Student.Student;
+import entities.menu.Menu;
+import entities.student.Student;
 import features.MenuSetup;
 import features.StudentFeatures;
 

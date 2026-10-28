@@ -1,13 +1,11 @@
 package features;
 
-import entities.Student.Student;
+import entities.student.Student;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.InvalidPathException;
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
