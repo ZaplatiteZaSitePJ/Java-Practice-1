@@ -1,6 +1,7 @@
 package features;
 
 import entities.student.Student;
+import pkg.my_list.MyArrayList;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,10 +13,10 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class StudentFeatures {
-    private final List<Student> students;
+    private final MyArrayList<Student> students;
     private final Scanner scanner;
 
-    public StudentFeatures(List<Student> students, Scanner scanner) {
+    public StudentFeatures(MyArrayList<Student> students, Scanner scanner) {
         this.students = students;
         this.scanner = scanner;
     }
