@@ -21,6 +21,19 @@ public class StudentFeatures {
         this.scanner = scanner;
     }
 
+    // Валидация дубликатов номеров зачетных книжек
+    private void checkDuplicateStudent(String number) {
+        boolean duplicate = students.stream()
+                .anyMatch(s -> s.getBookNumber()
+                        .equalsIgnoreCase(number));
+
+        if (duplicate) {
+            throw new IllegalArgumentException(
+                    "Студент с таким номером зачетной книжки уже существует."
+            );
+        }
+    }
+
     // Добавление студента вручную
     public void addStudentManually() {
         System.out.print("Введите имя студента: ");
@@ -32,17 +45,9 @@ public class StudentFeatures {
         System.out.print("Введите номер зачетной книжки: ");
         String number = scanner.nextLine().trim();
 
+        checkDuplicateStudent(number);
+
         Student student = new Student(name, grade, number);
-
-        boolean duplicate = students.stream()
-                .anyMatch(s -> s.getBookNumber()
-                        .equalsIgnoreCase(number));
-
-        if (duplicate) {
-            throw new IllegalArgumentException(
-                    "Студент с таким номером зачетной книжки уже существует."
-            );
-        }
 
         students.add(student);
 
@@ -93,17 +98,9 @@ public class StudentFeatures {
                         double grade = Double.parseDouble(parts[1].trim());
                         String number = parts[2].trim();
 
+                        checkDuplicateStudent(number);
+
                         Student student = new Student(name, grade, number);
-
-                        boolean duplicate = students.stream()
-                                .anyMatch(s -> s.getBookNumber()
-                                        .equalsIgnoreCase(number));
-
-                        if (duplicate) {
-                            throw new IllegalArgumentException(
-                                    "Такой номер зачетной книжки уже существует."
-                            );
-                        }
 
                         students.add(student);
                         added++;
