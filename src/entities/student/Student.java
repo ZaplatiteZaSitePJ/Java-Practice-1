@@ -8,7 +8,7 @@ public class Student {
     public Student(String name, double averageGrade, String bookNumber) {
         setName(name);
         setAverageGrade(averageGrade);
-        setbookNumber(bookNumber);
+        setBookNumber(bookNumber);
     }
 
     public String getName() {
@@ -42,13 +42,14 @@ public class Student {
         this.averageGrade = averageGrade;
     }
 
-    public void setbookNumber(String bookNumber) {
-        if (bookNumber == null) {
+    public void setBookNumber(String bookNumber) {
+        if (bookNumber == null || bookNumber.isBlank()) {
             throw new IllegalArgumentException(
                     "Ошибка! Пустой номер зачетной книжки."
             );
         }
-        this.bookNumber = bookNumber;
+
+        this.bookNumber = bookNumber.trim();
     }
 
     @Override
